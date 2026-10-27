@@ -23,24 +23,7 @@ A modern, responsive web application for simulating and comparing CPU Scheduling
 
 ---
 
-## 📸 Screenshots
-
-### หน้าจอหลัก (Welcome State)
-
-![หน้าจอหลัก — Dark Mode พร้อมให้ตั้งค่า](screenshots/01-welcome.png)
-
-### หน้าจอตั้งค่า Process (Configuration)
-
-![ตั้งค่าจำนวน Process, Burst Time และเลือกอัลกอริทึม](screenshots/02-config.png)
-
-### ผลลัพธ์การจำลอง (Simulation Results)
-
-![Gantt Chart, Performance Metrics, Process Details และ Algorithm Comparison](screenshots/03-results.png)
-
----
-
 ## 📦 วิธีติดตั้งและเปิดใช้งานโปรแกรม
-
 
 ### ข้อกำหนดเบื้องต้น (Prerequisites)
 
@@ -132,6 +115,10 @@ Cpu-Scheduling-Simulator/
 | SJF | 6.33 | 13.33 | 21 |
 | RR (Q=2) | 12.33 | 19.33 | 21 |
 
+**ภาพผลลัพธ์จากโปรแกรม:**
+
+![Test Case 1 — ผลลัพธ์การจำลอง 3 Processes](screenshots/testcase1-results.png)
+
 ### Test Case 2 — Varied Burst Times (5 Processes)
 
 | Process | Arrival Time (AT) | Burst Time (BT) |
@@ -150,6 +137,10 @@ Cpu-Scheduling-Simulator/
 | SJF | 3.20 | 7.00 |
 | RR (Q=2) | 8.60 | 12.40 |
 
+**ภาพผลลัพธ์จากโปรแกรม:**
+
+![Test Case 2 — ผลลัพธ์การจำลอง 5 Processes](screenshots/testcase2-results.png)
+
 > 💡 **หมายเหตุ:** SJF จะให้ค่า Average Waiting Time ต่ำที่สุดเสมอ เมื่อ Process ทุกตัวมี Arrival Time = 0
 
 ### Test Case 3 — Equal Burst Times (4 Processes)
@@ -166,6 +157,10 @@ Cpu-Scheduling-Simulator/
 - FCFS และ SJF จะให้ผลลัพธ์เหมือนกัน (Avg WT = 7.50, Avg TAT = 12.50)
 - ใช้ทดสอบว่าทั้งสองอัลกอริทึมให้ผลตรงกันเมื่อ BT เท่ากันหมด
 
+**ภาพผลลัพธ์จากโปรแกรม:**
+
+![Test Case 3 — ผลลัพธ์การจำลอง Equal BT](screenshots/testcase3-results.png)
+
 ### Test Case 4 — Single Process
 
 | Process | Arrival Time (AT) | Burst Time (BT) |
@@ -175,6 +170,10 @@ Cpu-Scheduling-Simulator/
 **ผลลัพธ์ที่คาดหวัง:**
 
 - ทุกอัลกอริทึมต้องให้ WT = 0, TAT = 10, Total Execution = 10
+
+**ภาพผลลัพธ์จากโปรแกรม:**
+
+![Test Case 4 — ผลลัพธ์การจำลอง Single Process](screenshots/testcase4-results.png)
 
 ---
 
