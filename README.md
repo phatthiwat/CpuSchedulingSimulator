@@ -23,7 +23,24 @@ A modern, responsive web application for simulating and comparing CPU Scheduling
 
 ---
 
+## 📸 Screenshots
+
+### หน้าจอหลัก (Welcome State)
+
+![หน้าจอหลัก — Dark Mode พร้อมให้ตั้งค่า](screenshots/01-welcome.png)
+
+### หน้าจอตั้งค่า Process (Configuration)
+
+![ตั้งค่าจำนวน Process, Burst Time และเลือกอัลกอริทึม](screenshots/02-config.png)
+
+### ผลลัพธ์การจำลอง (Simulation Results)
+
+![Gantt Chart, Performance Metrics, Process Details และ Algorithm Comparison](screenshots/03-results.png)
+
+---
+
 ## 📦 วิธีติดตั้งและเปิดใช้งานโปรแกรม
+
 
 ### ข้อกำหนดเบื้องต้น (Prerequisites)
 
