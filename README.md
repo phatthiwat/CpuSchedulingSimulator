@@ -39,7 +39,7 @@ A modern, responsive web application for simulating and comparing CPU Scheduling
    git clone https://github.com/<your-username>/Cpu-Scheduling-Simulator.git
    cd Cpu-Scheduling-Simulator
 
-   # หรือ Download ZIP แล้วแตกไฟล์
+   หรือ Download ZIP แล้วแตกไฟล์
    ```
 
 2. **เปิดไฟล์ `index.html` ในเว็บเบราว์เซอร์**
