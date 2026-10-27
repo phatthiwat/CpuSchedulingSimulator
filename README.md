@@ -99,81 +99,121 @@ Cpu-Scheduling-Simulator/
 
 ## 🧪 ตัวอย่างข้อมูลสำหรับทดสอบ (Test Cases)
 
+> 📌 **คำอธิบายตัวย่อ:**
+> - **AT** (Arrival Time) = เวลาที่ Process เข้าสู่ระบบ ($AT = 0$ ทุกกรณี)
+> - **BT** (Burst Time) = เวลาที่ CPU ใช้ในการประมวลผล
+> - **ST** (Start Time) = เวลาที่ Process เริ่มทำงานจริง
+> - **CT** (Completion Time) = เวลาที่ Process ทำงานเสร็จสิ้น
+> - **TAT** (Turnaround Time) = เวลาตั้งแต่เข้ามาจนทำงานเสร็จ ($CT - AT$)
+> - **WT** (Waiting Time) = เวลารอคอยในคิว ($TAT - BT$ หรือ $ST - AT$)
+
+---
+
 ### Test Case 1 — Basic (3 Processes)
 
-| Process | Arrival Time (AT) | Burst Time (BT) |
-|---|---|---|
-| P1 | 0 | 6 |
-| P2 | 0 | 8 |
-| P3 | 0 | 7 |
+**ตารางรายละเอียด Process (Process Details - FCFS):**
 
-**ผลลัพธ์ที่คาดหวัง:**
+| Process | AT | BT | ST | CT | TAT | WT |
+|---|---|---|---|---|---|---|
+| P1 | 0 | 6 | 0 | 6 | 6 | 0 |
+| P2 | 0 | 8 | 6 | 14 | 14 | 6 |
+| P3 | 0 | 7 | 14 | 21 | 21 | 14 |
+| **Average** | - | - | - | - | **13.67** | **6.67** |
 
-| Algorithm | Avg Waiting Time | Avg Turnaround Time | Total Execution Time |
+**ผลลัพธ์เปรียบเทียบแต่ละอัลกอริทึม (Algorithm Comparison):**
+
+| Algorithm | Avg Waiting Time (WT) | Avg Turnaround Time (TAT) | Total Execution Time |
 |---|---|---|---|
-| FCFS | 7.00 | 14.00 | 21 |
+| FCFS | 6.67 | 13.67 | 21 |
 | SJF | 6.33 | 13.33 | 21 |
-| RR (Q=2) | 12.33 | 19.33 | 21 |
+| RR (Q=2) | 11.33 | 18.33 | 21 |
 
 **ภาพผลลัพธ์จากโปรแกรม:**
 
-![Test Case 1 — ผลลัพธ์การจำลอง 3 Processes](screenshots/testcase1-results.png)
+![Test Case 1 — ผลลัพธ์การจำลอง 3 Processes](screenshots/1.jpeg)
+
+---
 
 ### Test Case 2 — Varied Burst Times (5 Processes)
 
-| Process | Arrival Time (AT) | Burst Time (BT) |
-|---|---|---|
-| P1 | 0 | 10 |
-| P2 | 0 | 1 |
-| P3 | 0 | 2 |
-| P4 | 0 | 1 |
-| P5 | 0 | 5 |
+**ตารางรายละเอียด Process (Process Details - FCFS):**
 
-**ผลลัพธ์ที่คาดหวัง:**
+| Process | AT | BT | ST | CT | TAT | WT |
+|---|---|---|---|---|---|---|
+| P1 | 0 | 10 | 0 | 10 | 10 | 0 |
+| P2 | 0 | 1 | 10 | 11 | 11 | 10 |
+| P3 | 0 | 2 | 11 | 13 | 13 | 11 |
+| P4 | 0 | 1 | 13 | 14 | 14 | 13 |
+| P5 | 0 | 5 | 14 | 19 | 19 | 14 |
+| **Average** | - | - | - | - | **13.40** | **9.60** |
 
-| Algorithm | Avg Waiting Time | Avg Turnaround Time |
-|---|---|---|
-| FCFS | 7.60 | 11.40 |
-| SJF | 3.20 | 7.00 |
-| RR (Q=2) | 8.60 | 12.40 |
+**ผลลัพธ์เปรียบเทียบแต่ละอัลกอริทึม (Algorithm Comparison):**
 
-**ภาพผลลัพธ์จากโปรแกรม:**
-
-![Test Case 2 — ผลลัพธ์การจำลอง 5 Processes](screenshots/testcase2-results.png)
+| Algorithm | Avg Waiting Time (WT) | Avg Turnaround Time (TAT) | Total Execution Time |
+|---|---|---|---|
+| FCFS | 9.60 | 13.40 | 19 |
+| SJF | 3.20 | 7.00 | 19 |
+| RR (Q=2) | 5.80 | 9.60 | 19 |
 
 > 💡 **หมายเหตุ:** SJF จะให้ค่า Average Waiting Time ต่ำที่สุดเสมอ เมื่อ Process ทุกตัวมี Arrival Time = 0
 
+**ภาพผลลัพธ์จากโปรแกรม:**
+
+![Test Case 2 — ผลลัพธ์การจำลอง 5 Processes](screenshots/2.jpeg)
+
+---
+
 ### Test Case 3 — Equal Burst Times (4 Processes)
 
-| Process | Arrival Time (AT) | Burst Time (BT) |
-|---|---|---|
-| P1 | 0 | 5 |
-| P2 | 0 | 5 |
-| P3 | 0 | 5 |
-| P4 | 0 | 5 |
+**ตารางรายละเอียด Process (Process Details - FCFS):**
 
-**ผลลัพธ์ที่คาดหวัง:**
+| Process | AT | BT | ST | CT | TAT | WT |
+|---|---|---|---|---|---|---|
+| P1 | 0 | 5 | 0 | 5 | 5 | 0 |
+| P2 | 0 | 5 | 5 | 10 | 10 | 5 |
+| P3 | 0 | 5 | 10 | 15 | 15 | 10 |
+| P4 | 0 | 5 | 15 | 20 | 20 | 15 |
+| **Average** | - | - | - | - | **12.50** | **7.50** |
 
-- FCFS และ SJF จะให้ผลลัพธ์เหมือนกัน (Avg WT = 7.50, Avg TAT = 12.50)
+**ผลลัพธ์เปรียบเทียบแต่ละอัลกอริทึม (Algorithm Comparison):**
+
+| Algorithm | Avg Waiting Time (WT) | Avg Turnaround Time (TAT) | Total Execution Time |
+|---|---|---|---|
+| FCFS | 7.50 | 12.50 | 20 |
+| SJF | 7.50 | 12.50 | 20 |
+| RR (Q=2) | 13.50 | 18.50 | 20 |
+
+- FCFS และ SJF จะให้ผลลัพธ์เหมือนกันทุกประการ (Avg WT = 7.50, Avg TAT = 12.50) เนื่องจากทุก Process มี Burst Time เท่ากัน
 - ใช้ทดสอบว่าทั้งสองอัลกอริทึมให้ผลตรงกันเมื่อ BT เท่ากันหมด
 
 **ภาพผลลัพธ์จากโปรแกรม:**
 
-![Test Case 3 — ผลลัพธ์การจำลอง Equal BT](screenshots/testcase3-results.png)
+![Test Case 3 — ผลลัพธ์การจำลอง Equal BT](screenshots/3.jpeg)
+
+---
 
 ### Test Case 4 — Single Process
 
-| Process | Arrival Time (AT) | Burst Time (BT) |
-|---|---|---|
-| P1 | 0 | 10 |
+**ตารางรายละเอียด Process (Process Details - FCFS):**
 
-**ผลลัพธ์ที่คาดหวัง:**
+| Process | AT | BT | ST | CT | TAT | WT |
+|---|---|---|---|---|---|---|
+| P1 | 0 | 10 | 0 | 10 | 10 | 0 |
+| **Average** | - | - | - | - | **10.00** | **0.00** |
 
-- ทุกอัลกอริทึมต้องให้ WT = 0, TAT = 10, Total Execution = 10
+**ผลลัพธ์เปรียบเทียบแต่ละอัลกอริทึม (Algorithm Comparison):**
+
+| Algorithm | Avg Waiting Time (WT) | Avg Turnaround Time (TAT) | Total Execution Time |
+|---|---|---|---|
+| FCFS | 0.00 | 10.00 | 10 |
+| SJF | 0.00 | 10.00 | 10 |
+| RR (Q=2) | 0.00 | 10.00 | 10 |
+
+- เมื่อมีเพียง Process เดียว ทุกอัลกอริทึมจะให้ผลลัพธ์เหมือนกันทั้งหมด (WT = 0, TAT = 10, Total Execution = 10)
 
 **ภาพผลลัพธ์จากโปรแกรม:**
 
-![Test Case 4 — ผลลัพธ์การจำลอง Single Process](screenshots/testcase4-results.png)
+![Test Case 4 — ผลลัพธ์การจำลอง Single Process](screenshots/4.jpeg)
 
 ---
 
